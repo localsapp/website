@@ -1,0 +1,211 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Locals App</title>
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+      <!-- VB LINK
+      <a data-route="users" href="/users" >Users</a> -->
+    <div class="canvas">
+      <iron-pages attr-for-selected="data-route" selected="{{route}}">
+        <section data-route="home">
+
+          <div class="visual">
+            <h1>Wij zijn Locals.</h1>
+            <button class="visualbtn">Download <span>Mac OSX</span></button>
+            <!-- KOMT-IE DAN -->
+          </div>
+
+
+          <div class="slogan">
+            <h2>Doe mee met jouw community</h2>
+          </div>
+
+
+          <div class="grid">
+
+            <div class="gridblock">
+              <img src="images/shortinfo.png">
+              <h3>Jouw gegevens blijven veilig dichtbij.</h3>
+              <p>Geen servers en clouds, jouw gegevens blijven enkel op jouw toestel(len) bewaard in <a href="">localstorage</a>.</p>
+            </div>
+
+            <div class="gridblock">
+              <img src="images/shortinfo.png">
+              <h3>Jouw gegevens zijn versleuteld.</h3>
+              <p>Dankzij <a href="">AES encryptie</a> zijn jouw gegevens onleesbaar zonder jouw private sleutel. Deze blijft altijd op jouw toestel staan en wordt nooit verstuurd over het internet. </p>
+            </div> 
+
+            <div class="gridblock">
+              <img src="images/shortinfo.png">
+              <h3>Peer-to-peer</h3>
+              <p>Toestellen communiceren met elkaar over het <a href="">MQTT protocol.</a>
+                  Gegevens worden uitgewisseld van toestel tot toestel, zonder centrale server.
+              </p>
+            </div>
+
+          </div>          
+
+
+
+          <div class="wide">
+            <div class="mediuminfo">
+              <div class="layout vertical self-start">
+                <h3>Open Source</h3>
+                <p>Locals is van iedereen. De broncode van Locals staat op Github. Iedereen kan dus meekijken en meebouwen.<br>
+                <a href="">github.com/Locals</a>
+                </p>
+              </div>
+              <span class="flex"></span>
+                <img src="images/shortinfo.png">
+            </div>  
+          </div>  
+
+
+
+          <div class="grid">
+
+            <div class="gridblock downloader">
+              <img src="images/shortinfo.png">
+              <a href="">Download version 0.1</a>
+              <small>voor Android</small>
+            </div>
+
+            <div class="gridblock downloader">
+              <img src="images/shortinfo.png">
+              <a href="">Download version 0.1</a>
+              <small>voor Mac OSX</small>
+            </div>
+
+            <div class="gridblock downloader">
+              <img src="images/shortinfo.png">
+              <a href="">Download version 0.1</a>
+              <small>voor Windows</small>
+            </div>
+
+            <div class="gridblock downloader">
+              <img src="images/shortinfo.png">
+              <a href="">Download version 0.1</a>
+              <small>voor Linux</small>
+            </div>
+
+            <div class="gridblock downloader">
+              <img src="images/shortinfo.png">
+              <a href="">Download version 0.1</a>
+              <small>voor Windows</small>
+            </div>
+
+            <div class="gridblock downloader">
+              <img src="images/shortinfo.png">
+              <a href="">Download version 0.1</a>
+              <small>voor Linux</small>
+            </div>
+          </div>   
+
+          <div class="wide">
+
+            <div class="smallgrid">
+
+            <div class="smallgridblock">
+              <img src="images/shortinfo.png">
+              <small>Stad Antwerpen</small>
+            </div>
+
+            <div class="smallgridblock">
+              <img src="images/shortinfo.png">
+              <small>iMinds</small>
+            </div>
+
+            <div class="smallgridblock">
+              <img src="images/shortinfo.png">
+              <small>Mobile Vikings Labs</small>
+            </div>
+
+            <div class="smallgridblock">
+              <img src="images/shortinfo.png">
+              <small>Digipolis</small>
+            </div>
+
+            <div class="smallgridblock">
+              <img src="images/shortinfo.png">
+              <small>Karel De Grote Hogeschool</small>
+            </div>
+
+            </div> 
+ 
+          </div>  
+
+          <div class="footer">
+          </div>  
+
+
+        </section>
+
+      </iron-pages>
+    </div>
+ 
+
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
