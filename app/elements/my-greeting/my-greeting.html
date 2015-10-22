@@ -7,24 +7,123 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../ons-peup/ons-peup.html">
+
 
 <dom-module id="my-greeting">
   <style>
     :host {
       display: block;
+
     }
 
-    @media (max-width: 600px) {
-      h1.paper-font-display1 {
-        font-size: 24px;
-      }
-    }
+    .visual {
+    text-align: center;    
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px; 
+    background-image: url("../../images/visual.png");
+    background-position: center; 
+    background-size: auto 100%; 
+    background-repeat: no-repeat; 
+  }
+
+
+/*  .visualbtn {
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: var(--primary-green);
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    outline: 0;
+    margin: 0px;
+    padding: 15px;
+    color: white;
+    font-family: OpensansLight;
+  }*/
+
+  .visualbtn span {
+    font-family: Opensans;
+  }
+
+
+  .topbar {
+    width: 100vw;
+    height: 10%;
+    @apply(--layout-horizontal);
+    @apply(--layout-center);
+    @apply(--layout-end-justified);
+  }
+
+  .topbar img {
+    height: 30px;
+    margin: 10px 5vw 10px 10px;
+  }
+
+  .topquote {
+    width: 100vw;
+    height: 20%;
+    @apply(--layout-horizontal);
+    @apply(--layout-center-center);
+  }
+
+
+  .topquote h1 {
+    font-size: 28px;
+    font-family: OpensansLight;
+    -webkit-font-smoothing: antialiased;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+  }
+
+
+  .peupen {
+    width: 100vw;
+    height: 70%;
+    overflow: hidden;
+    @apply(--layout-horizontal);
+    @apply(--layout-center);
+
+    @apply(--layout-center-justified);
+/*    background-color: rgba(0,0,0,0.2);
+*/  }
+
+
+
+
+
+
+
   </style>
   <template>
-    <h1 class="paper-font-display1"><span>{{greeting}}</span></h1>
-    <span class="paper-font-body2">Update text to change the greeting.</span>
-    <!-- Listens for "input" event and sets greeting to <input>.value -->
-    <input class="paper-font-body2" value="{{greeting::input}}">
+      <iron-media-query query="(min-width: 600px)" query-matches="{{smallwidth}}"></iron-media-query>
+      <iron-media-query query="(min-width: 1000px)" query-matches="{{mediumwidth}}"></iron-media-query>
+      <iron-media-query query="(min-width: 1400px)" query-matches="{{tallwidth}}"></iron-media-query>
+
+<div class="visual">
+      <div class="topbar">
+        <img src="../../images/GitHub-Mark_40x40.svg">
+      </div>
+      <div class="topquote">
+        <h1>Wij zijn Locals.</h1>
+      </div>
+
+      <div class="peupen">
+        <template is="dom-repeat" items="{{slicedpeupekes}}">
+<!--           <p>{{item.zindex}}</p>
+          <p>{{item.size}}</p> -->
+
+          <ons-peup filename="{{item.filename}}" size="{{item.size}}"></ons-peup>
+
+
+        </template>
+      </div>
+
+</div>
+
   </template>
 
   <script>
@@ -33,12 +132,77 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         is: 'my-greeting',
 
         properties: {
-          greeting: {
-            type: String,
-            value: 'Welcome!',
+          
+          smallwidth: {
+            type: Boolean,
+            observer: "_widthChanged",
             notify: true
+          },
+
+          mediumwidth: {
+            type: Boolean,
+            observer: "_widthChanged",
+            notify: true
+          },
+
+
+          tallwidth: {
+            type: Boolean,
+            observer: "_widthChanged",
+            notify: true
+          },
+
+
+          peups: {
+            type: Number,
+            notify: true
+          },
+
+          peupekes: {
+            type: Array,
+            value: [
+              { size: 0, filename: "../../images/peup-01.svg" },
+              { size: 1, filename: "../../images/peup-02.svg" },
+              { size: 2, filename: "../../images/peup-03.svg" },
+              { size: 3, filename: "../../images/peup-04.svg" },
+              { size: 0, filename: "../../images/peup-05.svg" },
+              { size: 1, filename: "../../images/peup-06.svg" },
+              { size: 2, filename: "../../images/peup-07.svg" },
+              { size: 3, filename: "../../images/peup-08.svg" },
+              { size: 0, filename: "../../images/peup-09.svg" },
+              { size: 1, filename: "../../images/peup-10.svg" },
+              { size: 2, filename: "../../images/peup-11.svg" },
+              { size: 3, filename: "../../images/peup-12.svg" }
+            ]
           }
+
+        },
+
+        _widthChanged: function(){
+          // console.log('is het small width??', this.smallwidth);
+
+          if (this.tallwidth){
+
+            this.peups = 12;
+            this.slicedpeupekes = this.peupekes;
+
+          } else if(this.mediumwidth) {
+
+            this.peups = 9;
+            this.slicedpeupekes = this.peupekes.slice(0,9);
+
+          } else if(this.smallwidth) {
+            this.peups = 6;
+            this.slicedpeupekes = this.peupekes.slice(0,6);
+
+          } else if(!this.smallwidth) {
+            this.peups = 3;
+            this.slicedpeupekes = this.peupekes.slice(0,3);
+
+          }
+
         }
+
       });
     })();
   </script>

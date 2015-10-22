@@ -59,17 +59,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
+
       <!-- VB LINK
       <a data-route="users" href="/users" >Users</a> -->
     <div class="canvas">
       <iron-pages attr-for-selected="data-route" selected="{{route}}">
         <section data-route="home">
 
-          <div class="visual">
-            <h1>Wij zijn Locals.</h1>
-            <button class="visualbtn">Download <span>Mac OSX</span></button>
-            <!-- KOMT-IE DAN -->
-          </div>
+        <my-greeting peups="{{peups}}"></my-greeting>
+
+
+
 
 
           <div class="slogan">
@@ -80,20 +80,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="grid">
 
             <div class="gridblock">
-              <img src="images/shortinfo.png">
-              <h3>Jouw gegevens blijven veilig dichtbij.</h3>
-              <p>Geen servers en clouds, jouw gegevens blijven enkel op jouw toestel(len) bewaard in <a href="">localstorage</a>.</p>
+              <img src="images/localstorage-03.svg">
+              <h3>Locals leven lokaal.</h3>
+              <p>Alle gegevens blijven enkel op het toestel bewaard in <a href="">localstorage</a>.
+                Geen centrale servers, geen clouds.</p>
+
+
+<!--               <p>Geen servers en clouds, jouw gegevens blijven enkel op jouw toestel(len) bewaard in <a href="">localstorage</a>.</p> -->
             </div>
 
             <div class="gridblock">
               <img src="images/shortinfo.png">
-              <h3>Jouw gegevens zijn versleuteld.</h3>
-              <p>Dankzij <a href="">AES encryptie</a> zijn jouw gegevens onleesbaar zonder jouw private sleutel. Deze blijft altijd op jouw toestel staan en wordt nooit verstuurd over het internet. </p>
+              <h3>Alle gegevens zijn versleuteld.</h3>
+              <p>Dankzij <a href="">AES encryptie</a> zijn jouw gegevens onleesbaar zonder jouw private sleutel. </p>
             </div> 
 
             <div class="gridblock">
-              <img src="images/shortinfo.png">
-              <h3>Peer-to-peer</h3>
+              <img src="images/peertopeer.svg">
+              <h3>Niet centraal maar peer-to-peer.</h3>
               <p>Toestellen communiceren met elkaar over het <a href="">MQTT protocol.</a>
                   Gegevens worden uitgewisseld van toestel tot toestel, zonder centrale server.
               </p>
@@ -121,43 +125,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="grid">
 
             <div class="gridblock downloader">
-              <img src="images/shortinfo.png">
-              <a href="">Download version 0.1</a>
-              <small>voor Android</small>
+              <img src="images/downloader-02.svg">
+              <button href="">Download Pre-alpha 0.1</button>
+              <small>Mac OS X 10.7 en hoger</small>
             </div>
 
             <div class="gridblock downloader">
-              <img src="images/shortinfo.png">
-              <a href="">Download version 0.1</a>
-              <small>voor Mac OSX</small>
+              <img src="images/downloader-01.svg">
+              <button href="">Download Pre-alpha 0.1</button>
+              <small>iOS 7 en hoger</small>
             </div>
 
             <div class="gridblock downloader">
-              <img src="images/shortinfo.png">
-              <a href="">Download version 0.1</a>
-              <small>voor Windows</small>
+              <img src="images/downloader-01.svg">
+              <button href="">Download Pre-alpha 0.1</button>
+              <small>Android 4 en hoger</small>
+            </div>
+            
+            <div class="gridblock downloader">
+              <img src="images/downloader-02.svg">
+              <button href="">Download Pre-alpha 0.1</button>
+              <small>Windows 7 en hoger</small>
             </div>
 
-            <div class="gridblock downloader">
-              <img src="images/shortinfo.png">
-              <a href="">Download version 0.1</a>
-              <small>voor Linux</small>
-            </div>
 
-            <div class="gridblock downloader">
-              <img src="images/shortinfo.png">
-              <a href="">Download version 0.1</a>
-              <small>voor Windows</small>
-            </div>
 
-            <div class="gridblock downloader">
-              <img src="images/shortinfo.png">
-              <a href="">Download version 0.1</a>
-              <small>voor Linux</small>
-            </div>
           </div>   
 
           <div class="wide">
+
 
             <div class="smallgrid">
 

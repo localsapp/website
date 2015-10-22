@@ -1,0 +1,99 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="ons-peup">
+  <template>
+    <style>
+      :host {
+        display: block;
+        --peup-size: 100%;
+      }
+
+      .peup {
+        width: var(--peup-size);
+      }
+
+      .peup img {
+        width: 100%;
+      }
+
+
+    </style>
+
+
+          <div class="peup">
+            <img src="{{filename}}"><!-- {{item.filename}} -->
+          </div>
+
+
+
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'ons-peup',
+
+      properties: {
+
+        size: {
+          type: Number,
+          value: 0,
+          observer: '_size',
+          notify: true
+        },
+        
+        filename: {
+          type: String,
+          value: 'peup-01.svg',
+          notify: true
+        },
+
+
+      },
+
+
+      _size: function(){
+
+        switch(this.size){
+          case 0:
+          this.customStyle['--peup-size'] = '80%';
+          this.updateStyles();
+          break;
+
+          case 1:
+          this.customStyle['--peup-size'] = '90%';
+          this.updateStyles();
+          break;
+
+          case 2:
+          this.customStyle['--peup-size'] = '100%';
+          this.updateStyles();
+          break;
+
+          case 3:
+          this.customStyle['--peup-size'] = '110%';
+          this.updateStyles();
+          break;
+
+        };
+
+ 
+
+      }
+
+
+    });
+  })();
+  </script>
+</dom-module>
