@@ -112,6 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
       <div class="topquote">
         <h1>Wij zijn Locals.</h1>
+
       </div>
 
       <div class="peupen">
@@ -193,8 +194,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           // console.log('is het small width??', this.smallwidth);
           this.peupekes = [];
 
+          this.peups = this.peups+1;
+
           for (var i = this.peups - 1; i >= 1; i--) {
-            this.push('peupekes', { size: 1, filename: '../../images/peup-'+i+'.svg'});
+            var grootte = Math.round(Math.random()*3);
+            //console.log(grootte);
+            this.push('peupekes', { size: grootte, filename: '../../images/peup-'+i+'.svg'});
           };
 
           shuffle(this.peupekes);
