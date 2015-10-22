@@ -31,6 +31,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         src: url(../fonts/OpenSans-Regular.ttf);
     }
 
+    @font-face {
+        font-family: OpensansSemibold;
+        src: url(../fonts/OpenSans-Semibold.ttf);
+    }
+
+    @font-face {
+        font-family: OpensansBold;
+        src: url(../fonts/OpenSans-Bold.ttf);
+    }
 
 
   :root {
@@ -123,7 +132,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   .grid {
-    width: 100vw;
+    width: 100%;
     @apply(--layout-horizontal);
     @apply(--layout-wrap);
     @apply(--layout-center-center);
@@ -173,7 +182,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   .downloader {
+    @apply(--layout-vertical);
+    @apply(--layout-center);
+    width: 250px;
   }
+
+  .downloader small {
+    font-family: Opensans;
+    font-size: 11px;
+  }
+
+
+  .downloader button {
+    font-size: 13px;
+    border-radius: 5px;
+    background-color: var(--primary-blue);
+/*    background-color: white;*/
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    outline: 0;
+    margin: 10px;
+    padding: 18px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: OpensansBold;
+
+  }
+
+  .downloadtype {
+    font-family: OpensansLight;
+    text-transform: none;
+
+  }
+
+  .downloader img {
+    width: 100%;
+  }
+
+
+
+
 
   a {
     color: var(--primary-blue);
