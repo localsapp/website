@@ -189,9 +189,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         _widthChanged: function(){
           // console.log('is het small width??', this.smallwidth);
           this.peupekes = [];
-          
+
           for (var i = this.peups - 1; i >= 0; i--) {
-            this.push('peupekes', { size: 1, filename: 'peup-'+i+'.svg'});
+            this.push('peupekes', { size: 1, filename: '../../images/peup-'+i+'.svg'});
           };
 
           shuffle(this.peupekes);
