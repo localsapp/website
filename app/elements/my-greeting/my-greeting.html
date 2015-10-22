@@ -28,6 +28,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background-position: center; 
     background-size: auto 100%; 
     background-repeat: no-repeat; 
+  
+    @apply(--layout-vertical);
+    @apply(--layout-center-center);
   }
 
 
@@ -190,7 +193,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           // console.log('is het small width??', this.smallwidth);
           //this.peupekes = [];
 
-          for (var i = this.peups - 1; i >= 0; i--) {
+          for (var i = this.peups - 1; i >= 1; i--) {
             this.push('peupekes', { size: 1, filename: '../../images/peup-'+i+'.svg'});
           };
 
