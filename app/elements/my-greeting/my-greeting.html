@@ -127,6 +127,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   <script>
+
+    function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
     (function() {
       Polymer({
         is: 'my-greeting',
@@ -160,26 +180,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           peupekes: {
             type: Array,
-            value: [
-              { size: 0, filename: "../../images/peup-01.svg" },
-              { size: 1, filename: "../../images/peup-02.svg" },
-              { size: 2, filename: "../../images/peup-03.svg" },
-              { size: 3, filename: "../../images/peup-04.svg" },
-              { size: 0, filename: "../../images/peup-05.svg" },
-              { size: 1, filename: "../../images/peup-06.svg" },
-              { size: 2, filename: "../../images/peup-07.svg" },
-              { size: 3, filename: "../../images/peup-08.svg" },
-              { size: 0, filename: "../../images/peup-09.svg" },
-              { size: 1, filename: "../../images/peup-10.svg" },
-              { size: 2, filename: "../../images/peup-11.svg" },
-              { size: 3, filename: "../../images/peup-12.svg" }
-            ]
+            value: []
           }
 
         },
 
+
         _widthChanged: function(){
           // console.log('is het small width??', this.smallwidth);
+          this.peupekes = [];
+          
+          for (var i = this.peups - 1; i >= 0; i--) {
+            this.push('peupekes', { size: 1, filename: 'peup-'+i+'.svg'});
+          };
+
+          shuffle(this.peupekes);
+          
 
           if (this.tallwidth){
 
